@@ -1,3 +1,6 @@
+
+import readKey
+
 playerName = input("Digite su nombre: ")
 
 print(f"""
@@ -24,3 +27,21 @@ d88P     888  "Y88888 "Y888888      "Y8888P"   "Y8888P 888  888  "Y88P"   "Y88P"
 Vamos al juego.
 
 """)
+
+
+"""key = readchar.readkey()
+print(key)"""
+
+print("Presiona teclas. Termina con flecha ARRIBA")
+
+while True:
+       key = readchar.readkey()
+  
+       if key == "\x1b[A":
+              print("UP") 
+              break
+  
+       print(key)
+
+print("Has terminado")
+
