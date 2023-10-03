@@ -2,7 +2,9 @@
 
 <h1>Laberinto ASCII</h1>
 Bienvenido al juego de laberintos en texto ASCII. El objetivo es guiar al personaje "P" por el laberinto hasta llegar a la meta "X" usando sólo las teclas de movimiento del teclado.
-![LaberintoPythonProyecto](https://github.com/Daniel-Acosta-Perez/ADA-SCHOOL-proyecto_Integrador/assets/120292051/ceac3d71-f1ff-43d1-965d-c9063ab8c2c3)
+
+![LaberintoPythonProyecto](https://github.com/Daniel-Acosta-Perez/ADA-SCHOOL-proyecto_Integrador/assets/120292051/474d20d4-2627-4038-8479-5a7e264181e1)
+
 
 
 <h2>Cómo jugar</h2>
