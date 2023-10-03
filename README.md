@@ -15,11 +15,12 @@ El laberinto está representado por los siguientes símbolos:
 
 El personaje se mueve con las teclas:
 
-Arriba → ↑
-Izquierda → ←
-Abajo → ↓
-Derecha → →
-Tu misión es mover al personaje por el laberinto hasta alcanzar la casilla marcada con una X, evitando chocar contra las paredes.
+- Arriba → ↑
+- Izquierda → ←
+- Abajo → ↓
+- Derecha → →
+
+*Tu misión es mover al personaje por el laberinto hasta alcanzar la casilla marcada con una X, evitando chocar contra las paredes.*
 
 Al inicio del juego se te pedirá que ingreses tu nombre. Luego verás un mensaje de bienvenida y comenzará el juego.
 
@@ -28,4 +29,4 @@ Suerte encontrando la salida del laberinto!
 Créditos
 Este proyecto fue creado como parte del curso de Ada School.
 
-Creado por Daniel Acosta Perez
+*Creado por Daniel Acosta Perez*
