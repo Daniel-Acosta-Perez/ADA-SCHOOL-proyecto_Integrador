@@ -8,10 +8,11 @@ Bienvenido al juego de laberintos en texto ASCII. El objetivo es guiar al person
 Cómo jugar
 El laberinto está representado por los siguientes símbolos:
 
-( P ) - El personaje que controlas
-( # )- Pared
-( . ) - Pasillo
-( X ) - Meta a alcanzar
+- El personaje que controlas (P)
+- Pared ('#')
+- Pasillo (.)
+- Meta a alcanzar (X)
+
 El personaje se mueve con las teclas:
 
 Arriba → ↑
