@@ -2,7 +2,7 @@ import os
 import readchar
 
 num = 0 
-
+#Proyecto integrador parte 3
 def imprimir_numero():
     os.system('cls' if os.name=='nt' else 'clear')
     print(num)
