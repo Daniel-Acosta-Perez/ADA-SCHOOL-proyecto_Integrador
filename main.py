@@ -1,9 +1,8 @@
+import readchar
+from readchar import readkey, key
 
-import readKey
-
-playerName = input("Digite su nombre: ")
-
-print(f"""
+def greet(playerName):
+       print(f"""
       
        d8888      888               .d8888b.           888                        888
       d88888      888              d88P  Y88b          888                        888
@@ -14,7 +13,7 @@ print(f"""
  d8888888888 Y88b 888 888  888     Y88b  d88P Y88b.    888  888 Y88..88P Y88..88P 888
 d88P     888  "Y88888 "Y888888      "Y8888P"   "Y8888P 888  888  "Y88P"   "Y88P"  888
 
-¡Bienvenido al laberinto, {playerName}!
+Welcome to the maze, {playerName}!
 
 ╔═══╦╗╔╦═══╦═══╦═══╦══╗╔╦═══╦══╗╔═══╗╔════╦╗─╔╦═══╦╗╔═══╦══╗
 ║╔═╗║║║║╔═╗║╔══╣╔═╗║╔╗║║║╔═╗║╔╗║╔═╗║║╔╗╔╗║║─║║║╔═╗║║║╔═╗║╔╗║
@@ -23,25 +22,17 @@ d88P     888  "Y88888 "Y888888      "Y8888P"   "Y8888P 888  888  "Y88P"   "Y88P"
 ║║║╚╣╚═╝║║─║║║──║║║╚╣╚═╝║║║╚╣╚═╝║║║║║║║║─║║║╔═╝║║║╔═╗║║║║
 ║║║─║╔═╗║╚═╝║╚═╗║║║─║╔═╗║║║─║╔═╗║║╚═╝║║║╚═╝║║╚══╣╚╝║─║║╚═╝
 ╚╝╚─╚╝─╚╩═══╩══╝╚╝─╚╝─╚╩╝╚─╚╝─╚╝╚════╝╚╩═══╩══╩══╝╚══╝
-
-Vamos al juego.
-
 """)
 
+playerName = input("Escribe tu nombre: ")
+greet(playerName)
 
-"""key = readchar.readkey()
-print(key)"""
-
-print("Presiona teclas. Termina con flecha ARRIBA")
-
+#Parte 2, proyecto integrador:
+#?Escribir un programa que corra un bucle infinito leyendo e imprimiento las teclas y sólo terminará cuando se presione la tecla ↑ indicada como UP
 while True:
-       key = readchar.readkey()
-  
-       if key == "\x1b[A":
-              print("UP") 
-              break
-  
-       print(key)
-
-print("Has terminado")
-
+    k = readchar.readkey()
+    if k != readchar.key.UP:
+        print(k)
+    else:
+        print("bye")
+        break
