@@ -1,5 +1,4 @@
 import readchar
-from readchar import readkey, key
 
 def greet(playerName):
        print(f"""
@@ -36,3 +35,5 @@ while True:
     else:
         print("bye")
         break
+
+
