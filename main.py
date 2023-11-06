@@ -41,8 +41,7 @@ def clear_screen_and_display(matrix, lifes):
         print(''.join(row))
     print(f"Lifes: {lifes}")
 
-def perder_una_vida(start_pos, map_matrix, px_act, py_act):
-    Lifes = 3
+def perder_una_vida(Lifes, start_pos, map_matrix, px_act, py_act):
     px, py = start_pos
     map_matrix[py_act][px_act] = '.'
     clear_screen_and_display(map_matrix, Lifes)
@@ -66,7 +65,7 @@ def play(map_matrix, start_pos, end_pos):
                 py -= 1
             else:
                 Lifes -= 1
-                map_matrix = perder_una_vida(start_pos, map_matrix, px, py)
+                map_matrix = perder_una_vida(Lifes, start_pos, map_matrix, px, py)
                 px, py = start_pos
 
         elif key == readchar.key.DOWN:
@@ -74,7 +73,7 @@ def play(map_matrix, start_pos, end_pos):
                 py += 1
             else:
                 Lifes -= 1
-                map_matrix = perder_una_vida(start_pos, map_matrix, px, py)
+                map_matrix = perder_una_vida(Lifes, start_pos, map_matrix, px, py)
                 px, py = start_pos
 
         elif key == readchar.key.LEFT:
@@ -82,7 +81,7 @@ def play(map_matrix, start_pos, end_pos):
                 px -= 1
             else:
                 Lifes -= 1
-                map_matrix = perder_una_vida(start_pos, map_matrix, px, py)
+                map_matrix = perder_una_vida(Lifes, start_pos, map_matrix, px, py)
                 px, py = start_pos
 
         elif key == readchar.key.RIGHT:
@@ -90,7 +89,7 @@ def play(map_matrix, start_pos, end_pos):
                 px += 1
             else:
                 Lifes -= 1
-                map_matrix = perder_una_vida(start_pos, map_matrix, px, py)
+                map_matrix = perder_una_vida(Lifes, start_pos, map_matrix, px, py)
                 px, py = start_pos
         
         if (px, py) == end_pos:
