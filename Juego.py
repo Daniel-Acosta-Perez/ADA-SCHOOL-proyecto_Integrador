@@ -11,7 +11,9 @@ class Juego:
         self.name = playerName
 
     def greet(self):
-    
+        """
+        Greets the player with a welcome message.
+        """
         print(f"""
       
        d8888      888               .d8888b.           888                        888
@@ -35,60 +37,64 @@ Welcome to the maze, {self.name}!
 """)
 
     def clear_screen_and_display(self):
+        """
+        Clears the screen and displays the current state of the maze.
+        """
         os.system('cls' if os.name == 'nt' else 'clear')
         for row in self.map_matrix:
             print(''.join(row))
         print(f"Lifes: {self.lifes}")
 
     def perder_una_vida(self, px_act, py_act):
+        """
+        Updates the player's life and position.
+        """
         px, py = self.start_pos
-        self.map_matrix[py_act][px_act] = '.'
-        self.clear_screen_and_display()
-        self.map_matrix[py][px] = 'P'
+        self.update_map_matrix(px_act, py_act, '.')
+        self.update_player_position(px, py)
+
+    def update_player_position(self, x, y):
+        """
+        Updates the player's position in the map matrix.
+        """
+        self.update_map_matrix(x, y, 'P')
+
+    def update_map_matrix(self, x, y, value):
+        """
+        Updates the value of a cell in the map matrix.
+        """
+        self.map_matrix[y][x] = value
 
     def play(self):
+        """
+        Starts the game and allows the player to navigate through the maze.
+        """
         px, py = self.start_pos
         is_playing = True
 
+        key_action_map = {
+            readchar.key.UP: (0, -1),
+            readchar.key.DOWN: (0, 1),
+            readchar.key.LEFT: (-1, 0),
+            readchar.key.RIGHT: (1, 0)
+        }
+
         while is_playing:
-            self.map_matrix[py][px] = 'P'
+            self.update_map_matrix(px, py, 'P')
             self.clear_screen_and_display()
-            self.map_matrix[py][px] = '.'
+            self.update_map_matrix(px, py, '.')
 
             key = readchar.readkey()
 
-            if key == readchar.key.UP:
-                if py > 0 and self.map_matrix[py - 1][px] != '#':
-                    py -= 1
+            if key in key_action_map:
+                dx, dy = key_action_map[key]
+                if 0 <= px + dx < len(self.map_matrix[0]) and 0 <= py + dy < len(self.map_matrix) and self.map_matrix[py + dy][px + dx] != '#':
+                    px += dx
+                    py += dy
                 else:
                     self.lifes -= 1
                     self.perder_una_vida(px, py)
                     px, py = self.start_pos
-            
-            elif key == readchar.key.DOWN:
-                if py < len(self.map_matrix) - 1 and self.map_matrix[py + 1][px] != '#':
-                    py += 1
-                else:
-                    self.lifes -= 1
-                    self.perder_una_vida(px, py)
-                    px, py = self.start_pos
-
-            elif key == readchar.key.LEFT:
-                if px > 0 and self.map_matrix[py][px - 1] != '#':
-                    px -= 1
-                else:
-                    self.lifes -= 1
-                    self.perder_una_vida(px, py)
-                    px, py = self.start_pos
-
-            elif key == readchar.key.RIGHT:
-                if px < len(self.map_matrix[0]) - 1 and self.map_matrix[py][px + 1] != '#':
-                    px += 1
-                else:
-                    self.lifes -= 1
-                    self.perder_una_vida(px, py)
-                    px, py = self.start_pos
-
 
             if (px, py) == self.end_pos:
                 is_playing = False
